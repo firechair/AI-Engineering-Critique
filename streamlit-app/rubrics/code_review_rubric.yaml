@@ -1,0 +1,41 @@
+name: "Code Review"
+description: "Standard rubric for evaluating code generation tasks."
+dimensions:
+  - name: "Correctness"
+    weight: 0.30
+    description: "Does the code work as intended? Are there logic errors or bugs?"
+    criteria:
+      - "Code executes without errors"
+      - "Logic handles the main use case correctly"
+      - "No obvious bugs or syntax errors"
+
+  - name: "Code Quality"
+    weight: 0.25
+    description: "Is the code readable, structured well, and properly named?"
+    criteria:
+      - "Variable and function names are descriptive"
+      - "Code is modular and follows DRY principles"
+      - "Appropriate comments and documentation"
+
+  - name: "Best Practices"
+    weight: 0.20
+    description: "Does the code follow language-specific conventions and idioms?"
+    criteria:
+      - "Follows PEP8 (Python) or relevant style guides"
+      - "Uses idiomatic constructs"
+      - "Avoids anti-patterns"
+
+  - name: "Edge Cases"
+    weight: 0.15
+    description: "Does the code handle errors and boundary conditions?"
+    criteria:
+      - "Input validation is present"
+      - "Empty/null inputs are handled"
+      - "Error handling is robust"
+
+  - name: "Performance"
+    weight: 0.10
+    description: "Are there unnecessary inefficiencies or scalability concerns?"
+    criteria:
+      - "Algorithm complexity is reasonable"
+      - "Resource usage (memory/CPU) is considered"

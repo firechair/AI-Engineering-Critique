@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Evaluations
+streamlit-app/evaluations/
+*.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# API Keys
+.env
+secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db

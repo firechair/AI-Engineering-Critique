@@ -1,0 +1,16 @@
+name: "Custom Rubric Name"
+description: "Description of what this rubric evaluates."
+dimensions:
+  - name: "Dimension 1"
+    weight: 0.50
+    description: "Description of this dimension."
+    criteria:
+      - "Criterion 1"
+      - "Criterion 2"
+
+  - name: "Dimension 2"
+    weight: 0.50
+    description: "Description of this dimension."
+    criteria:
+      - "Criterion 1"
+      - "Criterion 2"

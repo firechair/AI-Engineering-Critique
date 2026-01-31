@@ -1,0 +1,42 @@
+name: "General Task Analysis"
+description: "Broad rubric for evaluating general AI tasks and problem solving."
+dimensions:
+  - name: "Task Completion"
+    weight: 0.30
+    description: "Does the output fully address all requirements?"
+    criteria:
+      - "All instructions were followed"
+      - "No missing components"
+      - "Achieves the user's goal"
+
+  - name: "Quality"
+    weight: 0.25
+    description: "Is the output of high quality?"
+    criteria:
+      - "Professional standard"
+      - "Free of errors"
+      - "Well-crafted"
+
+  - name: "Clarity"
+    weight: 0.20
+    description: "Is the output clear and understandable?"
+    criteria:
+      - "Easy to interpret"
+      - "Unambiguous"
+      - "Accessible language"
+
+  - name: "Creativity"
+    weight: 0.15
+    description: "Does the solution show novelty or insight?"
+    criteria:
+      - "Offers unique perspectives"
+      - "Goes beyond the obvious"
+      - "Smart approach"
+
+  - name: "Practicality"
+    weight: 0.10
+    description: "Is the output actionable and useful?"
+    criteria:
+      - "Can be implemented immediately"
+      - "Realistic solution"
+      - "Adds value"

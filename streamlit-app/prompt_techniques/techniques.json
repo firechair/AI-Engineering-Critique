@@ -1,0 +1,69 @@
+{
+  "techniques": [
+    {
+      "id": "add_context",
+      "name": "Add Context",
+      "description": "Providing background information helps the model understand the broader picture and tailor its response.",
+      "checklist": [
+        "Include user persona or role",
+        "Describe the goal or objective",
+        "Mention the target audience"
+      ],
+      "example_enhancement": "Instead of 'Write a post', try 'As a marketing manager, write a LinkedIn post for developers about our new API.'"
+    },
+    {
+      "id": "specify_format",
+      "name": "Specify Format",
+      "description": "Explicitly stating the desired output format reduces ambiguity and post-processing needs.",
+      "checklist": [
+        "Define the structure (e.g., list, essay, code)",
+        "Specify constraints (length, style)",
+        "Mention file formats if applicable (JSON, Markdown)"
+      ],
+      "example_enhancement": "Add 'Output the result as a JSON object with keys: title, summary, tags.'"
+    },
+    {
+      "id": "provide_examples",
+      "name": "Provide Examples (Few-Shot)",
+      "description": "Giving examples of input-output pairs significantly improves performance on complex tasks.",
+      "checklist": [
+        "Include at least one clear example",
+        "Cover edge cases in examples",
+        "Ensure examples match the desired format"
+      ],
+      "example_enhancement": "Add 'Example: Input: 'Happy', Output: 'Ecstatic'. Input: 'Sad', Output: '?'"
+    },
+    {
+      "id": "clarify_constraints",
+      "name": "Clarify Constraints",
+      "description": "Setting boundaries helps the model avoid unwanted behaviors or outputs.",
+      "checklist": [
+        "List what NOT to do",
+        "Set technical limitations",
+        "Define tone or style restrictions"
+      ],
+      "example_enhancement": "Add 'Do not use technical jargon. Keep sentences under 20 words.'"
+    },
+    {
+      "id": "chain_of_thought",
+      "name": "Chain of Thought",
+      "description": "Encouraging the model to think step-by-step improves reasoning capabilities.",
+      "checklist": [
+        "Ask the model to explain its reasoning",
+        "Break the task into steps",
+        "Use phrases like 'Let's think step by step'"
+      ],
+      "example_enhancement": "Add 'First, outline the logic, then write the code. Explain your decision for each function.'"
+    },
+    {
+      "id": "add_evaluation_criteria",
+      "name": "Add Evaluation Criteria",
+      "description": "Telling the model how it will be evaluated helps it optimize for those metrics.",
+      "checklist": [
+        "Mention success metrics",
+        "Define quality standards"
+      ],
+      "example_enhancement": "Add 'The response should be judged on clarity, brevity, and witty tone.'"
+    }
+  ]
+}
