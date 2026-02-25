@@ -1,21 +1,89 @@
-MIT License
+FORGEML LICENSE
+================
 
-Copyright (c) 2024 AI Engineering Critique Authors
+Copyright (c) 2025 firechair
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+PERMISSIONS
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+You are granted the following rights:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+1. PERSONAL USE
+   - Use this software for personal, educational, or research purposes
+   - Run the software on your own computer or private server
+   - Test and evaluate the software's functionality
+
+2. MODIFICATION
+   - Modify the source code for personal use
+   - Create derivative works for personal use
+   - Customize the software to fit your needs
+
+3. CONTRIBUTION
+   - Submit modifications back to the original project
+   - Contribute improvements via pull requests
+   - Participate in the development of the original project
+
+RESTRICTIONS
+
+You are NOT permitted to:
+
+1. COMMERCIAL USE
+   - Use this software for any commercial purposes
+   - Sell this software or charge fees for its use
+   - Include this software in a commercial product or service
+   - Use this software to generate revenue in any form
+   - Provide this software as a paid service (SaaS, hosting, consulting)
+
+2. REDISTRIBUTION
+   - Redistribute this software under a different name
+   - Rebrand this software as your own project
+   - Publish modified versions under a new project name
+   - Create forks that claim to be separate projects
+   - Remove or alter the original project attribution
+
+3. MISREPRESENTATION
+   - Claim authorship of the original work
+   - Imply endorsement by the original author without permission
+   - Misrepresent the origin or source of the software
+
+REQUIREMENTS
+
+If you use, modify, or contribute to this software, you must:
+
+1. ATTRIBUTION
+   - Maintain all copyright notices
+   - Credit the original project: "ForgeML"
+   - Include a link to the original repository
+   - Preserve this license in all copies
+
+2. CONTRIBUTIONS
+   - Contributions submitted to the original project are licensed under this same license
+   - You retain copyright of your contributions
+   - The original project maintainer has the right to accept or reject contributions
+
+3. SHARING MODIFICATIONS (Optional)
+   - If you share your modifications publicly, you must:
+     * Clearly state they are modifications of "ForgeML"
+     * Include a link to the original project
+     * Not imply they are a separate, independent project
+
+DISCLAIMER
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+COMMERCIAL LICENSING
+
+If you wish to use this software for commercial purposes, please contact the
+author to obtain a commercial license.
+
+SUMMARY
+
+In simple terms:
+✅ Use it personally, modify it, test it, contribute improvements
+❌ Don't sell it, don't rebrand it, don't use it commercially
+🔗 Always credit the original project
