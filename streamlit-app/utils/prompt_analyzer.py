@@ -48,3 +48,29 @@ class PromptAnalyzer:
             if tech["id"] == technique_id:
                 return tech
         return None
+    def analyze_with_llm(self, prompt: str, llm_client, model_id: str) -> str:
+        """
+        Analyzes the prompt using an LLM, referencing the techniques.json file.
+        """
+        # Build techniques context
+        techniques_context = ""
+        for tech in self.techniques:
+            techniques_context += f"- **{tech['name']}**: {tech['description']}\n"
+            techniques_context += f"  Checklist: {', '.join(tech['checklist'])}\n"
+            techniques_context += f"  Example: {tech['example_enhancement']}\n\n"
+
+        system_prompt = (
+            "You are an expert AI Prompt Engineer. Your task is to analyze the user's prompt "
+            "and suggest how it can be improved, based *only* on the following prompt techniques:\n\n"
+            f"{techniques_context}\n"
+            "Provide a detailed, structured critique of the prompt, highlighting which techniques are missing or "
+            "could be applied better, and provide a revised, enhanced version of the prompt at the end."
+        )
+
+        response = llm_client.generate_response(
+            prompt=f"Here is the prompt to analyze:\n\n{prompt}",
+            model=model_id,
+            system_prompt=system_prompt,
+            temperature=0.7
+        )
+        return response

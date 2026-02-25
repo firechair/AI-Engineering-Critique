@@ -1,0 +1,158 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* GLOBAL RESET */
+:root {
+    --font-sans: "Inter", sans-serif;
+    --primary: #18181b;
+    --background: #ffffff;
+    --foreground: #09090b;
+    --radius: 0.5rem;
+}
+
+html,
+body,
+[class*="st-"] {
+    font-family: var(--font-sans) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* INPUTS & TEXT AREAS - Aggressive Override Strategy */
+/* -------------------------------------------------------------------------- */
+
+/* Target the wrapper div of text inputs */
+div[data-testid="stTextInput"]>div>div>input {
+    border-radius: var(--radius) !important;
+    border: 1px solid #e4e4e7 !important;
+    color: var(--foreground) !important;
+    background-color: #ffffff !important;
+    font-size: 0.875rem !important;
+    padding: 0.5rem 0.75rem !important;
+    height: 2.5rem !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Target TextArea */
+div[data-testid="stTextArea"]>div>div>textarea {
+    border-radius: var(--radius) !important;
+    border: 1px solid #e4e4e7 !important;
+    background-color: #ffffff !important;
+    color: var(--foreground) !important;
+    font-size: 0.875rem !important;
+    min-height: 80px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Focus States */
+div[data-testid="stTextInput"]>div>div>input:focus,
+div[data-testid="stTextArea"]>div>div>textarea:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 2px rgba(24, 24, 27, 0.2) !important;
+    outline: none !important;
+}
+
+/* Number Input */
+div[data-testid="stNumberInput"]>div>div>input {
+    border-radius: var(--radius) !important;
+    border: 1px solid #e4e4e7 !important;
+    background-color: #ffffff !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* SELECTBOX & DROPDOWNS */
+/* -------------------------------------------------------------------------- */
+/* These are tricky as they use BaseWeb. We target the container mainly. */
+
+div[data-testid="stSelectbox"]>div>div {
+    border-radius: var(--radius) !important;
+    border: 1px solid #e4e4e7 !important;
+    background-color: #ffffff !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* BUTTONS */
+/* -------------------------------------------------------------------------- */
+
+/* Standard Streamlit Button */
+div[data-testid="stButton"]>button {
+    border-radius: var(--radius) !important;
+    border: 1px solid #e4e4e7 !important;
+    background-color: #ffffff !important;
+    color: #09090b !important;
+    font-weight: 500 !important;
+    font-size: 0.875rem !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+div[data-testid="stButton"]>button:hover {
+    background-color: #f4f4f5 !important;
+    border-color: #e4e4e7 !important;
+    color: #18181b !important;
+}
+
+/* Primary Button Override */
+div[data-testid="stButton"]>button[kind="primary"] {
+    background-color: #18181b !important;
+    color: #fafafa !important;
+    border: 1px solid #18181b !important;
+}
+
+div[data-testid="stButton"]>button[kind="primary"]:hover {
+    background-color: #27272a !important;
+    /* zinc-800 */
+    opacity: 0.9 !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* COMPONENT CONTAINERS */
+/* -------------------------------------------------------------------------- */
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: #f4f4f5 !important;
+    border-right: 1px solid #e4e4e7 !important;
+}
+
+/* Expanders */
+.streamlit-expanderHeader {
+    background-color: #ffffff !important;
+    border-radius: var(--radius) !important;
+    border: 1px solid #e4e4e7 !important;
+    font-weight: 500 !important;
+    color: #09090b !important;
+}
+
+div[data-testid="stExpander"] {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+/* Radio Buttons */
+/* Make the container cleaner */
+div[data-testid="stRadio"] {
+    background-color: transparent !important;
+}
+
+/* Headers */
+h1,
+h2,
+h3 {
+    font-weight: 600 !important;
+    letter-spacing: -0.025em !important;
+}
+
+/* Code Blocks */
+code {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.875rem !important;
+    background-color: #f4f4f5 !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 0.25rem !important;
+}
+
+/* Divider */
+hr {
+    border-color: #e4e4e7 !important;
+}
