@@ -36,13 +36,6 @@ Enter the key directly in the sidebar when you launch the Streamlit app. This is
 
 The app automatically filters to show only free models from OpenRouter. You won't incur any charges while using the platform.
 
-Free models include options from:
-- **Google** (Gemma)
-- **Meta** (Llama)
-- **Mistral**
-- **DeepSeek**
-- And others
-
 The available models change over time as providers update their offerings.
 
 ## Troubleshooting

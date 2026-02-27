@@ -129,6 +129,17 @@ div[data-testid="stExpander"] {
     border: none !important;
 }
 
+/* Fix: Hide streamlit_shadcn_ui arrow icon ligature overlapping expander headers.
+   The library injects Material Icon ligature "keyboard_arrow_right" as plain text
+   inside a span with data-testid="stIconMaterial". */
+div[data-testid="stExpander"] details>summary [data-testid="stIconMaterial"] {
+    font-size: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    display: none !important;
+}
+
 /* Radio Buttons */
 /* Make the container cleaner */
 div[data-testid="stRadio"] {

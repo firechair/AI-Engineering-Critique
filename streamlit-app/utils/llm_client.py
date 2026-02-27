@@ -28,11 +28,11 @@ class LLMClient:
         else:
             self.client = None
     
-    @st.cache_data(ttl=3600)
+    @st.cache_data(ttl=300)
     def fetch_models(_self) -> List[Dict]:
         """
         Fetch all available models from OpenRouter.
-        Results are cached for 1 hour.
+        Results are cached for 5 minutes to balance freshness with API efficiency.
         
         Returns:
             List of model dictionaries with their properties

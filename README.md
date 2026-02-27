@@ -11,6 +11,18 @@ This platform helps you develop that skill through hands on practice with **Pref
 
 ---
 
+## Demo
+
+<div align="center">
+  <a href="./assets/compact_demo.mp4">
+    <img src="./assets/compact_demo.gif" alt="AI Engineering Critique Demo" width="100%" />
+  </a>
+</div>
+
+> **Note**: The above is a preview GIF. You can click it to view or download the higher-quality `.mp4` video file.
+
+---
+
 ## Why Preference Learning Matters
 
 Every major LLM you use today was shaped by human preferences. Engineers didn't just run training code—they learned to see the difference between "good enough" and "actually good." They compared outputs, articulated why one was better, and fed that signal back into the model.
@@ -136,6 +148,48 @@ The app automatically filters to show only free models, so you can experiment wi
 
 ---
 
+## OpenRouter & Model Behaviour
+
+> **What you should know before generating responses.**
+
+### Response Times
+
+Generation times vary widely across free models. Some respond in seconds; others may take 30–60+ seconds or occasionally time out. **This is controlled entirely by OpenRouter and the upstream model providers**, not by this application. If a model is slow or unresponsive, try a different one.
+
+### Free Model Reliability
+
+Not all free models work consistently — some may return errors, refuse certain prompts, or produce degraded outputs. The list of available free models is fetched **live from the OpenRouter API each time the application starts** (and refreshed every 5 minutes during a session), so the selection reflects what OpenRouter currently offers.
+
+### Using Pay-Per-Use Models
+
+The application defaults to **free models only**, but you can unlock the full OpenRouter catalogue. The filtering logic lives in `streamlit-app/utils/llm_client.py`, inside the `get_free_models()` method:
+
+```python
+# streamlit-app/utils/llm_client.py
+def get_free_models(self) -> List[Dict]:
+    all_models = self.fetch_models()
+    free_models = []
+    for model in all_models:
+        pricing = model.get("pricing", {})
+        prompt_price = float(pricing.get("prompt", "1"))
+        completion_price = float(pricing.get("completion", "1"))
+        if prompt_price == 0.0 and completion_price == 0.0:   # <-- change this condition
+            free_models.append(model)
+    return free_models
+```
+
+To expose **all** OpenRouter models (including paid ones), replace the condition with `return all_models` or add your own filter.
+
+### OpenRouter Documentation
+
+For a complete reference on available models, pricing, and API behaviour:
+
+- [**Models overview**](https://openrouter.ai/models) — browse and compare all available models
+- [**API reference**](https://openrouter.ai/docs/api-reference/overview) — request format, parameters, and response schema
+- [**Model routing**](https://openrouter.ai/docs/features/model-routing) — how OpenRouter selects and falls back between providers
+
+---
+
 ## See It In Action
 
 The repository includes two complete evaluation reports you can study:
@@ -156,6 +210,7 @@ ai-engineering-critique/
 │   ├── rubrics/                    # 5 pre built evaluation rubrics
 │   ├── prompt_techniques/          # 6 techniques for prompt enhancement
 │   ├── evaluations/                # Example reports
+│   ├── tests/                      # Unit tests (pytest)
 │   └── utils/                      # LLM client, evaluator, report generator
 ├── docs/
 │   ├── api-setup.md               # OpenRouter configuration
@@ -168,11 +223,27 @@ ai-engineering-critique/
 
 ## Under the Hood
 
-- **Free Models**: Uses OpenRouter's freetier LLMs—no cost to experiment
+- **Free Models**: Uses OpenRouter's free-tier LLMs — no cost to experiment. The model list is fetched live from the OpenRouter API and refreshed every 5 minutes
 - **Parameter Control**: Adjust Temperature, Top-P, Max Tokens, and Top-K for each response
 - **Dual Evaluation**: Switch between manual scoring and LLM as Judge
 - **Weighted Scoring**: Each rubric dimension has configurable importance
 - **Report Generation**: Exports markdown with LLM reasoning analysis
+
+---
+
+## Testing
+
+The project includes a test suite for the core evaluation logic:
+
+```bash
+# Install dependencies
+pip install -r streamlit-app/requirements.txt
+
+# Run tests
+python -m pytest streamlit-app/tests/ -v
+```
+
+The tests cover the LLM-as-Judge JSON parsing pipeline — including malformed responses, trailing commas, score clamping, and retry behavior.
 
 ---
 
@@ -184,4 +255,4 @@ Found a bug? Have an idea for a new rubric? Contributions are welcome. Check the
 
 ## License
 
-MIT License — see [LICENSE](LICENSE) for details.
+firechair License — see [LICENSE](LICENSE) for details.
